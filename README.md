@@ -1,0 +1,20 @@
+
+plugins {
+    id 'net.minecraftforge.gradle' version '6.0.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
+}
+
+group = 'com.bridge'
+version = '1.0.0'
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+}
+
+mixin {
+    add sourceSets.main, "apertureimmersivebridge.refmap.json"
+}
