@@ -1,20 +1,16 @@
-buildscript {
+pluginManagement {
     repositories {
         maven { url = 'https://minecraftforge.net' }
         maven { url = 'https://spongepowered.org' }
         mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7.+'
+        gradlePluginPortal()
     }
 }
 
 plugins {
+    id 'net.minecraftforge.gradle' version '6.0.+'
     id 'org.spongepowered.mixin' version '0.7.+'
 }
-
-apply plugin: 'net.minecraftforge.gradle'
 
 group = 'com.bridge'
 version = '1.0.0'
@@ -30,4 +26,3 @@ dependencies {
 mixin {
     add sourceSets.main, "apertureimmersivebridge.refmap.json"
 }
-
