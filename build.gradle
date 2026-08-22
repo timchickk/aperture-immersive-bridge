@@ -1,7 +1,18 @@
+buildscript {
+    repositories {
+        maven { url = 'https://minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
+    }
+}
+
 plugins {
-    id 'net.minecraftforge.gradle' version '6.0.+'
     id 'org.spongepowered.mixin' version '0.7.+'
 }
+
+apply plugin: 'net.minecraftforge.gradle'
 
 group = 'com.bridge'
 version = '1.0.0'
